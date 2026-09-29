@@ -26,7 +26,7 @@ header{background:var(--teal);color:var(--cream);position:sticky;top:0;z-index:1
 .logo{font-family:'Marcellus',serif;font-size:1.25rem;color:var(--cream);}
 nav.main-nav{display:flex;gap:18px;flex-wrap:wrap;font-size:.92rem;}
 nav.main-nav a{color:var(--sand);}
-nav.main-nav a.active{color:var(--bright);border-bottom:2px solid var(--bright);padding-bottom:3px;}
+nav.main-nav a.active{color:#fff;border-bottom:2px solid #fff;padding-bottom:3px;}
 .lang-switch{display:flex;gap:4px;}
 .lang-switch button{background:none;border:1.5px solid rgba(246,241,227,.35);color:var(--sand);border-radius:4px;padding:5px 9px;font-size:.8rem;}
 .lang-switch button.active{background:#fff;color:var(--teal);border-color:#fff;}
@@ -118,10 +118,10 @@ footer{border-top:1px solid var(--line);padding:22px 0 calc(22px + env(safe-area
       <p data-i18n="dest_sub">Four cities, four different eras of the Silk Road.</p>
     </div>
     <div class="grid">
-      <div class="dest a"><h3>Samarkand</h3><span data-i18n="tours_count">12 tours</span></div>
-      <div class="dest b"><h3>Bukhara</h3><span data-i18n="tours_count">8 tours</span></div>
-      <div class="dest c"><h3>Khiva</h3><span data-i18n="soon">Coming soon</span></div>
-      <div class="dest d"><h3>Tashkent</h3><span data-i18n="soon">Coming soon</span></div>
+      <div class="dest a"><h3 data-i18n="city_sam">Samarkand</h3><span data-i18n="tours_count">12 tours</span></div>
+      <div class="dest b"><h3 data-i18n="city_buk">Bukhara</h3><span data-i18n="tours_count">8 tours</span></div>
+      <div class="dest c"><h3 data-i18n="city_khi">Khiva</h3><span data-i18n="soon">Coming soon</span></div>
+      <div class="dest d"><h3 data-i18n="city_tas">Tashkent</h3><span data-i18n="soon">Coming soon</span></div>
     </div>
   </div>
 </section>
@@ -157,7 +157,8 @@ const I18N = {
     s2_h:"Pick a tour or plan your own", s2_p:"Use a ready-made school tour or build your own route.",
     s3_h:"Filter by budget", s3_p:"See only what fits your price range.",
     s4_h:"Go explore", s4_p:"Addresses, phone numbers, and photos in one place.",
-    footer_text:"Silk Road — student travel guide project."
+    footer_text:"Silk Road — student travel guide project.",
+    city_sam:"Samarkand",city_buk:"Bukhara",city_khi:"Khiva",city_tas:"Tashkent"
   },
   ru: {
     nav_home:"Главная", nav_tours:"Тур пакеты", nav_dest:"Направления", nav_food:"Где поесть", nav_news:"Новости",
@@ -172,7 +173,8 @@ const I18N = {
     s2_h:"Выберите тур или составьте свой", s2_p:"Готовый школьный тур или собственный маршрут.",
     s3_h:"Фильтр по бюджету", s3_p:"Показываем только то, что укладывается в ваш бюджет.",
     s4_h:"Отправляйтесь", s4_p:"Адреса, телефоны и фото — в одном месте.",
-    footer_text:"Silk Road — студенческий туристический проект."
+    footer_text:"Silk Road — студенческий туристический проект.",
+    city_sam:"Самарканд",city_buk:"Бухара",city_khi:"Хива",city_tas:"Ташкент"
   },
   uz: {
     nav_home:"Bosh sahifa", nav_tours:"Tur paketlar", nav_dest:"Yo'nalishlar", nav_food:"Qayerda ovqatlanish", nav_news:"Yangiliklar",
@@ -187,7 +189,8 @@ const I18N = {
     s2_h:"Tur tanlang yoki o'zingiznikini tuzing", s2_p:"Tayyor maktab turi yoki o'z marshrutingiz.",
     s3_h:"Byudjet bo'yicha filtr", s3_p:"Faqat byudjetingizga mos variantlarni ko'ring.",
     s4_h:"Sayohatga chiqing", s4_p:"Manzillar, telefonlar va rasmlar — bir joyda.",
-    footer_text:"Silk Road — talabalar sayohat loyihasi."
+    footer_text:"Silk Road — talabalar sayohat loyihasi.",
+    city_sam:"Samarqand",city_buk:"Buxoro",city_khi:"Xiva",city_tas:"Toshkent"
   }
 };
 function setLang(lang){

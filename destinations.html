@@ -20,7 +20,7 @@ header{background:var(--teal);color:#fff;position:sticky;top:0;z-index:10;}
 .logo{font-family:'Marcellus',serif;font-size:1.25rem;color:#fff;}
 nav.main-nav{display:flex;gap:18px;flex-wrap:wrap;font-size:.92rem;}
 nav.main-nav a{color:#eaf6ff;}
-nav.main-nav a.active{color:#c6ffdb;border-bottom:2px solid #c6ffdb;padding-bottom:3px;}
+nav.main-nav a.active{color:#fff;border-bottom:2px solid #fff;padding-bottom:3px;}
 .lang-switch{display:flex;gap:4px;}
 .lang-switch button{background:none;border:1.5px solid rgba(255,255,255,.4);color:#fff;border-radius:4px;padding:5px 9px;font-size:.8rem;}
 .lang-switch button.active{background:#fff;color:var(--teal);border-color:#fff;}
@@ -57,10 +57,10 @@ footer{border-top:1px solid var(--line);padding:22px 0 calc(22px + env(safe-area
 <section>
   <div class="wrap">
   <div class="grid">
-    <div class="dest a"><h3>Samarkand</h3><p data-i18n="d1">Timurid domes and the Registan square.</p><a class="link" href="tours.html" data-i18n="see_tours">See tours</a></div>
-    <div class="dest b"><h3>Bukhara</h3><p data-i18n="d2">A whole old town still standing.</p><a class="link" href="tours.html" data-i18n="see_tours">See tours</a></div>
-    <div class="dest c"><h3>Khiva</h3><p data-i18n="d3">A walled desert city, crossable on foot.</p><a class="link" href="tours.html" data-i18n="see_tours">See tours</a></div>
-    <div class="dest d"><h3>Tashkent</h3><p data-i18n="d4">The modern capital and food scene.</p><a class="link" href="tours.html" data-i18n="see_tours">See tours</a></div>
+    <div class="dest a"><h3 data-i18n="city_sam">Samarkand</h3><p data-i18n="d1">Timurid domes and the Registan square.</p><a class="link" href="tours.html" data-i18n="see_tours">See tours</a></div>
+    <div class="dest b"><h3 data-i18n="city_buk">Bukhara</h3><p data-i18n="d2">A whole old town still standing.</p><a class="link" href="tours.html" data-i18n="see_tours">See tours</a></div>
+    <div class="dest c"><h3 data-i18n="city_khi">Khiva</h3><p data-i18n="d3">A walled desert city, crossable on foot.</p><a class="link" href="tours.html" data-i18n="see_tours">See tours</a></div>
+    <div class="dest d"><h3 data-i18n="city_tas">Tashkent</h3><p data-i18n="d4">The modern capital and food scene.</p><a class="link" href="tours.html" data-i18n="see_tours">See tours</a></div>
   </div>
   </div>
 </section>
@@ -72,15 +72,18 @@ const I18N={
 en:{nav_home:"Home",nav_tours:"Tour Packages",nav_dest:"Destinations",nav_food:"Where to Eat",nav_news:"News",
 dest_h1:"Explore by destination",
 d1:"Timurid domes and the Registan square.",d2:"A whole old town still standing.",d3:"A walled desert city, crossable on foot.",d4:"The modern capital and food scene.",
-see_tours:"See tours",footer_text:"Silk Road — student travel guide project."},
+see_tours:"See tours",footer_text:"Silk Road — student travel guide project.",
+city_sam:"Samarkand",city_buk:"Bukhara",city_khi:"Khiva",city_tas:"Tashkent"},
 ru:{nav_home:"Главная",nav_tours:"Тур пакеты",nav_dest:"Направления",nav_food:"Где поесть",nav_news:"Новости",
 dest_h1:"Направления",
 d1:"Купола Тимуридов и площадь Регистан.",d2:"Целый старый город, сохранившийся до наших дней.",d3:"Город-крепость в пустыне, который можно обойти пешком.",d4:"Современная столица и лучшая кухня страны.",
-see_tours:"Смотреть туры",footer_text:"Silk Road — студенческий туристический проект."},
+see_tours:"Смотреть туры",footer_text:"Silk Road — студенческий туристический проект.",
+city_sam:"Самарканд",city_buk:"Бухара",city_khi:"Хива",city_tas:"Ташкент"},
 uz:{nav_home:"Bosh sahifa",nav_tours:"Tur paketlar",nav_dest:"Yo'nalishlar",nav_food:"Qayerda ovqatlanish",nav_news:"Yangiliklar",
 dest_h1:"Yo'nalishlar bo'yicha",
 d1:"Temuriylar gumbazlari va Registon maydoni.",d2:"Hali ham saqlanib qolgan eski shahar.",d3:"Piyoda aylanib chiqsa bo'ladigan devor bilan o'ralgan shahar.",d4:"Zamonaviy poytaxt va ovqat maskani.",
-see_tours:"Turlarni ko'rish",footer_text:"Silk Road — talabalar sayohat loyihasi."}
+see_tours:"Turlarni ko'rish",footer_text:"Silk Road — talabalar sayohat loyihasi.",
+city_sam:"Samarqand",city_buk:"Buxoro",city_khi:"Xiva",city_tas:"Toshkent"}
 };
 function setLang(lang){
   document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(I18N[lang][k])el.textContent=I18N[lang][k];});
