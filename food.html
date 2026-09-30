@@ -90,7 +90,9 @@ const PLACES=[
   {city:"Samarkand",name:"Bibikhanum Teahouse",cuisine:"Café",price:"$",
     desc:{en:"Tea, samsa, and pastries.",ru:"Чай, самса и выпечка.",uz:"Choy, somsa va pishiriqlar."}},
   {city:"Bukhara",name:"Old Bukhara Restaurant",cuisine:"Uzbek",price:"$$",
-    desc:{en:"Courtyard dining in a merchant house.",ru:"Ужин во внутреннем дворике купеческого дома.",uz:"Savdogar uyining hovlisida ovqatlanish."}}
+    desc:{en:"Courtyard dining in a merchant house.",ru:"Ужин во внутреннем дворике купеческого дома.",uz:"Savdogar uyining hovlisida ovqatlanish."}},
+  {city:"Tashkent",name:{ru:"Чайхана «Жемчужина»",en:"Pearl Teahouse",uz:"«Marvarid» choyxonasi"},cuisine:"Uzbek",price:"$$",
+    desc:{en:"Traditional dishes and tea in a cozy courtyard.",ru:"Традиционные блюда и чай в уютном дворике.",uz:"Qulay hovlida an'anaviy taomlar va choy."}}
 ];
 let curPrice="all", curCuisine="all", currentLang="en";
 const ANY_CUISINE={en:"Any cuisine",ru:"Любая кухня",uz:"Har qanday taom"};
@@ -101,7 +103,7 @@ function fill(){
 }
 function render(){
   const list=PLACES.filter(p=>(curPrice==="all"||p.price===curPrice)&&(curCuisine==="all"||p.cuisine===curCuisine));
-  document.getElementById("foodGrid").innerHTML=list.length?list.map(p=>`<div class="card"><h3>${p.name}</h3><p>${CITY_NAMES[p.city][currentLang]} · ${CUISINE_NAMES[p.cuisine][currentLang]} — ${p.desc[currentLang]}</p><span class="price">${p.price}</span></div>`).join(""):
+  document.getElementById("foodGrid").innerHTML=list.length?list.map(p=>`<div class="card"><h3>${typeof p.name==="string"?p.name:p.name[currentLang]}</h3><p>${CITY_NAMES[p.city][currentLang]} · ${CUISINE_NAMES[p.cuisine][currentLang]} — ${p.desc[currentLang]}</p><span class="price">${p.price}</span></div>`).join(""):
     `<p style="color:#555;font-style:italic">No places match these filters yet.</p>`;
 }
 document.getElementById("priceFilter").addEventListener("click",e=>{
