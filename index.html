@@ -66,6 +66,25 @@ section{padding:48px 0;}
 footer{border-top:1px solid var(--line);padding:22px 0 calc(22px + env(safe-area-inset-bottom,0px));font-size:.82rem;color:#6b7873;}
 
 
+
+/* Mobile fix: keep the search form inside the viewport */
+@media (max-width: 600px){
+  .search-bar{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .field{
+    min-width:0;
+    width:100%;
+  }
+  .price-chips{
+    flex-wrap:wrap;
+  }
+  .search-bar .go{
+    align-self:flex-start;
+  }
+}
+
 </style>
 </head>
 <body>
